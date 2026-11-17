@@ -25,51 +25,58 @@
     return node;
   }
 
-  function recipeCard(recipe, featured) {
+  function recipeMeta(recipe) {
+    var meta = el("p", { class: "card-meta" });
+    meta.appendChild(el("span", { text: recipe.time + (recipe.timeNote ? " · " + recipe.timeNote : "") }));
+    if (recipe.diet) {
+      meta.appendChild(el("span", { "aria-hidden": "true", class: "dot", text: "·" }));
+      meta.appendChild(el("span", { text: recipe.diet }));
+    }
+    return meta;
+  }
+
+  function recipeButton(recipe) {
+    var btn = el("button", {
+      class: "link-btn",
+      type: "button",
+      "data-recipe": recipe.id,
+      "aria-label": "View sample layout: " + recipe.title
+    }, [el("span", { text: "View sample layout" }), el("span", { class: "arrow", "aria-hidden": "true", text: "→" })]);
+    btn.addEventListener("click", function () { openRecipe(recipe.id); });
+    return btn;
+  }
+
+  function recipeCard(recipe, variant, index) {
     var card = el("article", {
-      class: "card card-recipe" + (featured ? " is-featured" : ""),
+      class: "dish dish-" + variant + " reveal",
       id: recipe.id
     });
-
-    var imgWrap = el("div", { class: "card-media" });
-    var img = el("img", {
+    var imgWrap = el("div", { class: "dish-media" });
+    imgWrap.appendChild(el("img", {
       src: recipe.image,
       alt: recipe.imageAlt,
       width: "900",
       height: "1125",
-      loading: featured ? "eager" : "lazy",
+      loading: "lazy",
       decoding: "async"
-    });
-    imgWrap.appendChild(img);
-
-    var body = el("div", { class: "card-body" });
-    body.appendChild(el("p", { class: "eyebrow" }, [
+    }));
+    var body = el("div", { class: "dish-body" });
+    if (variant === "index") {
+      body.appendChild(el("span", { class: "dish-num", "aria-hidden": "true", text: "0" + (index + 1) }));
+    }
+    body.appendChild(el("p", { class: "eyebrow-row" }, [
       el("span", { class: "badge", text: recipe.titlePrefix || "Sample dish" })
     ]));
     body.appendChild(el("h3", { text: recipe.title }));
-    var meta = el("p", { class: "card-meta" });
-    meta.appendChild(el("span", { text: recipe.time + (recipe.timeNote ? " · " + recipe.timeNote : "") }));
-    if (recipe.diet) {
-      meta.appendChild(el("span", { "aria-hidden": "true", text: " · " }));
-      meta.appendChild(el("span", { text: recipe.diet }));
-    }
-    body.appendChild(meta);
-    body.appendChild(el("p", { text: recipe.excerpt }));
-    var btn = el("button", {
-      class: "btn btn-secondary",
-      type: "button",
-      text: "View sample layout",
-      "data-recipe": recipe.id
-    });
-    btn.addEventListener("click", function () { openRecipe(recipe.id); });
-    body.appendChild(btn);
-
+    body.appendChild(recipeMeta(recipe));
+    body.appendChild(el("p", { class: "dish-excerpt", text: recipe.excerpt }));
+    body.appendChild(recipeButton(recipe));
     card.appendChild(imgWrap);
     card.appendChild(body);
     return card;
   }
 
-  function renderRecipes(section, mountId, featuredFirst) {
+  function renderRecipes(section, mountId, variant) {
     var mount = document.getElementById(mountId);
     if (!mount) return;
     var list = (data.recipes || []).filter(function (r) { return r.section === section; });
@@ -77,16 +84,16 @@
       mount.appendChild(el("p", { class: "empty", text: "Recipes will appear here once they are added to js/data.js." }));
       return;
     }
-    var grid = el("div", { class: "grid" + (featuredFirst ? " grid-featured" : "") });
+    var grid = el("div", { class: "dishes dishes-" + variant });
     list.forEach(function (recipe, i) {
-      grid.appendChild(recipeCard(recipe, featuredFirst && i === 0));
+      grid.appendChild(recipeCard(recipe, i === 0 && variant === "editorial" ? "feature" : variant, i));
     });
     mount.appendChild(grid);
   }
 
-  function lookCard(look) {
-    var card = el("article", { class: "card card-look", id: look.id });
-    var imgWrap = el("div", { class: "card-media" });
+  function lookCard(look, index) {
+    var card = el("article", { class: "look reveal", id: look.id });
+    var imgWrap = el("div", { class: "look-media" });
     imgWrap.appendChild(el("img", {
       src: look.image,
       alt: look.imageAlt,
@@ -95,9 +102,10 @@
       loading: "lazy",
       decoding: "async"
     }));
-    var body = el("div", { class: "card-body" });
-    body.appendChild(el("p", { class: "eyebrow" }, [
-      el("span", { class: "badge", text: look.titlePrefix || "Sample look" })
+    imgWrap.appendChild(el("span", { class: "look-num", "aria-hidden": "true", text: "Look " + (index + 1) }));
+    var body = el("div", { class: "look-body" });
+    body.appendChild(el("p", { class: "eyebrow-row" }, [
+      el("span", { class: "badge badge-light", text: look.titlePrefix || "Sample look" })
     ]));
     body.appendChild(el("h3", { text: look.title }));
     body.appendChild(el("p", { text: look.note }));
@@ -105,11 +113,14 @@
     (look.items || []).forEach(function (item) {
       var li = el("li");
       var link = el("a", {
-        class: "btn btn-secondary shop-btn",
+        class: "shop-btn",
         href: item.href || "#",
-        "data-affiliate": item.affiliate || "placeholder",
-        text: "Shop the look: " + item.name
-      });
+        "data-affiliate": item.affiliate || "placeholder"
+      }, [
+        el("span", { class: "shop-label", text: "Shop the look" }),
+        el("span", { class: "shop-name", text: item.name }),
+        el("span", { class: "arrow", "aria-hidden": "true", text: "→" })
+      ]);
       link.addEventListener("click", function (ev) {
         if (!item.href || item.href === "#") {
           ev.preventDefault();
@@ -120,7 +131,6 @@
       list.appendChild(li);
     });
     body.appendChild(list);
-    body.appendChild(el("p", { class: "disclosure", text: "Affiliate disclosure: shop buttons are placeholders for now. When live, some links may be affiliate links, which means we may earn a commission at no extra cost to you." }));
     card.appendChild(imgWrap);
     card.appendChild(body);
     return card;
@@ -134,9 +144,10 @@
       mount.appendChild(el("p", { class: "empty", text: "Looks will appear here once they are added to js/data.js." }));
       return;
     }
-    var grid = el("div", { class: "grid" });
-    list.forEach(function (look) { grid.appendChild(lookCard(look)); });
+    var grid = el("div", { class: "looks" });
+    list.forEach(function (look, i) { grid.appendChild(lookCard(look, i)); });
     mount.appendChild(grid);
+    mount.appendChild(el("p", { class: "disclosure", text: "Affiliate disclosure: shop buttons are placeholders for now. When live, some links may be affiliate links, which means we may earn a commission at no extra cost to you." }));
   }
 
   var dialog, dialogTitle, dialogBody, lastFocus;
@@ -200,6 +211,10 @@
     if (!toggle || !nav) return;
 
     function setOpen(open) {
+      if (open) {
+        var header = document.getElementById("site-header");
+        if (header) nav.style.setProperty("--nav-top", Math.max(0, header.getBoundingClientRect().bottom) + "px");
+      }
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       nav.classList.toggle("is-open", open);
       document.body.classList.toggle("nav-open", open);
@@ -256,11 +271,106 @@
     sections.forEach(function (sec) { observer.observe(sec); });
   }
 
-  renderRecipes("showcase", "recipes-grid", true);
-  renderRecipes("quick", "quick-grid", false);
-  renderRecipes("vegan", "vegan-grid", false);
+
+  /* ------------------------------------------------------------------
+   * CATERING INQUIRIES
+   * TODO: CATERING_EMAIL NEEDS THE REAL BOOKING ADDRESS.
+   * The site is static (no backend), so the form opens a pre-filled email.
+   * Until this is changed from the placeholder below, submitting the form
+   * shows an "Inquiries open soon" message instead of opening email.
+   * Example: var CATERING_EMAIL = "catering@yourdomain.com";
+   * ------------------------------------------------------------------ */
+  var CATERING_EMAIL = "REPLACE_WITH_CATERING_EMAIL";
+
+  function cateringEmailReady() {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CATERING_EMAIL) && CATERING_EMAIL.indexOf("REPLACE_WITH") === -1;
+  }
+
+  function setupCatering() {
+    var form = document.getElementById("catering-inquiry");
+    if (!form) return;
+    var status = document.getElementById("catering-status");
+
+    function setError(input, show) {
+      var err = document.getElementById(input.id + "-err");
+      input.setAttribute("aria-invalid", show ? "true" : "false");
+      if (err) err.hidden = !show;
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var name = form.elements.name, email = form.elements.email, type = form.elements.event_type;
+      var bad = [];
+      setError(name, !name.value.trim()); if (!name.value.trim()) bad.push(name);
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      setError(email, !emailOk); if (!emailOk) bad.push(email);
+      setError(type, !type.value); if (!type.value) bad.push(type);
+      if (bad.length) {
+        bad[0].focus();
+        announce("Please check the highlighted fields.");
+        return;
+      }
+
+      if (!cateringEmailReady()) {
+        status.hidden = false;
+        status.className = "form-status field-full is-soon";
+        status.textContent = "Inquiries open soon. Catering requests aren’t connected yet. Please check back shortly, and thank you for thinking of Cristel for your event.";
+        announce("Inquiries open soon. Nothing was sent.");
+        return;
+      }
+
+      var v = function (n) { return (form.elements[n].value || "").trim() || "—"; };
+      var subject = "Catering inquiry: " + v("event_type") + (v("event_date") !== "—" ? " on " + v("event_date") : "");
+      var body = [
+        "Name: " + v("name"),
+        "Email: " + v("email"),
+        "Phone: " + v("phone"),
+        "Event date: " + v("event_date"),
+        "Event type: " + v("event_type"),
+        "Guest count: " + v("guests"),
+        "Location: " + v("location"),
+        "",
+        "About the event:",
+        v("message")
+      ].join("\n");
+      window.location.href = "mailto:" + CATERING_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      status.hidden = false;
+      status.className = "form-status field-full";
+      status.textContent = "Your email app should open with your request filled in. Press send there to reach Cristel’s catering inbox.";
+    });
+  }
+
+  function setupReveal() {
+    var items = document.querySelectorAll(".reveal");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) {
+      items.forEach(function (n) { n.classList.add("is-in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    items.forEach(function (n) { io.observe(n); });
+  }
+
+  function setupHeader() {
+    var header = document.getElementById("site-header");
+    if (!header) return;
+    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  renderRecipes("showcase", "recipes-grid", "editorial");
+  renderRecipes("quick", "quick-grid", "index");
+  renderRecipes("vegan", "vegan-grid", "arch");
   renderLooks();
   setupNav();
   setupForm();
+  setupCatering();
   setupCurrentSection();
+  setupReveal();
+  setupHeader();
 })();

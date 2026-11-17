@@ -6,11 +6,17 @@ This folder is ready to drop into a GitHub Pages repo. The site itself is finish
 
 ## Live URL
 
-**Not published yet.** Cursor’s GitHub tools can read the connected account (`Miezeer-Tech`) but cannot create a repository or enable GitHub Pages. Once a public repo is created, the intended URL is:
+https://miezeer-tech.github.io/buon-appetito-with-cristel/ (GitHub Pages, `main` branch, root)
 
-https://miezeer-tech.github.io/buon-appetito-with-cristel/
+## ⚠️ Catering form needs the real booking email
 
-See [Publish to GitHub Pages](#publish-to-github-pages) below.
+The **Catering** section’s “Request catering” form has no backend. It opens the visitor’s email app with their details pre-filled (a `mailto:` link) addressed to **one constant** at the top of the catering block in `js/app.js`:
+
+```js
+var CATERING_EMAIL = "REPLACE_WITH_CATERING_EMAIL";
+```
+
+**Replace that placeholder with the real catering inbox** (for example `catering@yourdomain.com`). Until it is a real address, submitting the form shows a friendly “Inquiries open soon” message and nothing is sent. No email address is printed on the page.
 
 ## Preview locally
 
@@ -31,7 +37,8 @@ Navigation:
 3. **Quick Recipes** — “10 minutes or less” sample layout
 4. **Vegan & Meatless** — sample vegan and non-meat cards
 5. **Fashion & Cooking** — sample “shop the look” cards with affiliate-ready buttons
-6. **About** — official brand story, mission, positioning, and a newsletter form
+6. **Catering** — hire Cristel for private dinners, celebrations, corporate events and seasonal gatherings; “Request catering” inquiry form (see the catering email note above). No prices, packages, menus or client names are listed.
+7. **About** — official brand story, mission, positioning, and a newsletter form
 
 ## What’s real vs placeholder
 
@@ -47,6 +54,7 @@ Navigation:
 
 - All recipe titles, times, diet tags, and descriptions in `js/data.js` (`placeholder: true`). Cards and the recipe dialog say “Recipe coming soon — sample layout.”
 - All fashion/accessory “looks.” They are not outfits from the show. Shop buttons use `href="#"` and `data-affiliate="placeholder-..."`.
+- The catering inquiry form until `CATERING_EMAIL` is set (shows “Inquiries open soon”).
 - The newsletter form. It is marked “Preview only — this form is not connected yet” and does not send anything.
 - Food stills on recipe cards, and the cream heels photo, are Unsplash stock — not photos from the show.
 

@@ -29,10 +29,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <link rel="preload" as="image" href="assets/images/cristel-hero.webp" imagesrcset="assets/images/cristel-hero-800.webp 800w, assets/images/cristel-hero.webp 1400w" imagesizes="(max-width: 899px) 100vw, 50vw">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="preload" as="image" href="assets/images/cristel-hero.webp" imagesrcset="assets/images/cristel-hero-800.webp 800w, assets/images/cristel-hero.webp 1400w" imagesizes="(max-width: 899px) 90vw, 45vw">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <script>document.documentElement.classList.add('js');</script>
 
   <script type="application/ld+json">
   {
@@ -60,204 +61,378 @@
   }
   </script>
 </head>
+</head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="live-region" aria-live="polite" aria-atomic="true"></div>
 
-  <div class="site-top">
-    <div class="preview-banner" role="status">
-      <strong>Preview site.</strong> Recipe and fashion cards are labeled sample layouts, ready to be replaced with Cristel’s real dishes and looks.
-    </div>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="#top">
-          <span class="wordmark">
-            <span class="wordmark-script">Cristel</span>
-            <span class="wordmark-surname">Monrose</span>
-          </span>
-          <span class="brand-label">Cooking With Cristel</span>
-        </a>
-        <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="#top">Home</a></li>
-            <li><a href="#recipes">Recipes</a></li>
-            <li><a href="#quick-recipes">Quick Recipes</a></li>
-            <li><a href="#vegan">Vegan &amp; Meatless</a></li>
-            <li><a href="#fashion">Fashion &amp; Cooking</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <div class="preview-banner" role="status">
+    <strong>Preview site.</strong> Recipe and fashion cards are labeled sample layouts, ready to be replaced with Cristel’s real dishes and looks.
   </div>
 
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Cristel Monrose, Cooking With Cristel, home">
+        <span class="wordmark">
+          <span class="wordmark-script">Cristel</span>
+          <span class="wordmark-surname">Monrose</span>
+        </span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#quick-recipes">Quick Recipes</a></li>
+          <li><a href="#vegan">Vegan &amp; Meatless</a></li>
+          <li><a href="#fashion">Fashion &amp; Cooking</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#catering-form">Request catering</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
   <main id="main">
+    <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-heading">
       <div class="hero-grid">
-        <figure class="hero-photo">
-          <img
-            src="assets/images/cristel-hero.webp"
-            srcset="assets/images/cristel-hero-800.webp 800w, assets/images/cristel-hero.webp 1400w"
-            sizes="(max-width: 899px) 100vw, 50vw"
-            width="1400"
-            height="2291"
-            alt="Cristel Monrose looking over her shoulder and smiling, with pink hydrangeas behind her.">
-        </figure>
         <div class="hero-copy">
-          <p class="eyebrow">Buon Appetito with Cristel · Celebrities · Cooking · Real Talk</p>
-          <span class="flag-stripe" aria-hidden="true"></span>
-          <h1 id="hero-heading">Make every day feel like a celebration at the table.</h1>
-          <p class="accent">Pull up a chair</p>
+          <p class="kicker"><span class="kicker-rule" aria-hidden="true"></span>Cooking With Cristel</p>
+          <h1 id="hero-heading" class="display">
+            <span class="line">Make every day</span>
+            <span class="line">feel like a</span>
+            <span class="line"><em>celebration</em></span>
+            <span class="line">at the table.</span>
+          </h1>
+          <div class="hero-sub">
+            <span class="flag-stripe" aria-hidden="true"></span>
+            <p class="pull-up">Pull up a chair.</p>
+          </div>
           <p class="lede">Cristel Monrose is a celebrity chef who brings the warmth of the family table to everything she touches. This is Cooking With Cristel — the home of her show, <em>Buon Appetito with Cristel</em>.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="#recipes">Browse the recipes</a>
-            <a class="btn btn-secondary" href="#join">Join the table</a>
+            <a class="btn btn-ghost" href="#catering">Hire Cristel to cater</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img
+              src="assets/images/cristel-hero.webp"
+              srcset="assets/images/cristel-hero-800.webp 800w, assets/images/cristel-hero.webp 1400w"
+              sizes="(max-width: 899px) 90vw, 45vw"
+              width="1400"
+              height="2291"
+              fetchpriority="high"
+              alt="Cristel Monrose looking over her shoulder and smiling, with pink hydrangeas behind her.">
+          </figure>
+          <figure class="hero-prop" aria-hidden="true">
+            <img src="assets/images/prop-lemons-crop.webp" width="210" height="210" alt="">
+          </figure>
+          <p class="hero-vertical" aria-hidden="true">Celebrities · Cooking · Real Talk</p>
+          <div class="hero-badge">
+            <span class="hero-badge-small">The show</span>
+            <span class="hero-badge-title"><em>Buon Appetito</em> with Cristel</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pillars" aria-label="Brand pillars">
-      <div class="wrap pillar-grid">
-        <article class="pillar">
-          <div class="pillar-bar is-food" aria-hidden="true"></div>
-          <h2>Food</h2>
-          <p>The heart of the brand. Cooking show, kids cooking school, wine, olive oil and coffee.</p>
-        </article>
-        <article class="pillar">
-          <div class="pillar-bar is-fashion" aria-hidden="true"></div>
-          <h2>Fashion</h2>
-          <p>Modeling and personal style. Glamorous, feminine and confident, never stiff.</p>
-        </article>
-        <article class="pillar">
-          <div class="pillar-bar is-beauty" aria-hidden="true"></div>
-          <h2>Beauty</h2>
-          <p>The makeup line. Warm, wearable color inspired by wine, roses and the Italian sun.</p>
-        </article>
+    <!-- RIBBON -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>Food</span><i>✦</i><span>Fashion</span><i>✦</i><span>Beauty</span><i>✦</i><span><em>Buon appetito!</em></span><i>✦</i>
+        <span>Food</span><i>✦</i><span>Fashion</span><i>✦</i><span>Beauty</span><i>✦</i><span><em>Buon appetito!</em></span><i>✦</i>
+        <span>Food</span><i>✦</i><span>Fashion</span><i>✦</i><span>Beauty</span><i>✦</i><span><em>Buon appetito!</em></span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- PILLARS -->
+    <section class="pillars" aria-labelledby="pillars-heading">
+      <div class="wrap">
+        <h2 id="pillars-heading" class="sr-only">Brand pillars</h2>
+        <ol class="pillar-list">
+          <li class="pillar reveal">
+            <span class="pillar-num" aria-hidden="true">01</span>
+            <h3>Food</h3>
+            <p>The heart of the brand. Cooking show, kids cooking school, wine, olive oil and coffee.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num" aria-hidden="true">02</span>
+            <h3>Fashion</h3>
+            <p>Modeling and personal style. Glamorous, feminine and confident, never stiff.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar-num" aria-hidden="true">03</span>
+            <h3>Beauty</h3>
+            <p>The makeup line. Warm, wearable color inspired by wine, roses and the Italian sun.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section" id="recipes" aria-labelledby="recipes-heading">
+    <!-- RECIPES -->
+    <section class="section section-recipes" id="recipes" aria-labelledby="recipes-heading">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Recipes</p>
-          <h2 id="recipes-heading">Dishes from the table, coming soon</h2>
-          <p class="section-intro">Salt your pasta water like the sea. The cards below are a sample layout so you can see how Cristel’s recipes will live here. Each one is clearly marked until the real dish takes its place.</p>
-          <span class="flag-stripe" aria-hidden="true"></span>
-        </div>
+        <header class="section-head reveal">
+          <p class="section-no" aria-hidden="true">No. 01</p>
+          <div>
+            <p class="eyebrow">Recipes</p>
+            <h2 id="recipes-heading" class="h-section">Dishes from the table, <em>coming soon</em></h2>
+          </div>
+          <p class="section-intro"><span class="voice">Salt your pasta water like the sea.</span> The cards below are a sample layout so you can see how Cristel’s recipes will live here. Each one is clearly marked until the real dish takes its place.</p>
+        </header>
         <div id="recipes-grid"></div>
       </div>
     </section>
 
-    <div class="quote-band">
-      <blockquote>
-        <p>A red lip and a glass of rosé fix almost anything.</p>
-        <span class="flag-stripe" aria-hidden="true"></span>
-      </blockquote>
-    </div>
+    <!-- QUOTE -->
+    <section class="quote-band" aria-label="A word from Cristel">
+      <div class="wrap quote-grid">
+        <figure class="quote-prop reveal" aria-hidden="true">
+          <img src="assets/images/prop-hydrangeas-crop.webp" width="235" height="462" alt="" loading="lazy" decoding="async">
+        </figure>
+        <blockquote class="reveal">
+          <p>A red lip and a glass of rosé fix almost anything.</p>
+          <footer><span class="flag-stripe" aria-hidden="true"></span> Cristel</footer>
+        </blockquote>
+      </div>
+    </section>
 
-    <section class="section" id="quick-recipes" aria-labelledby="quick-heading">
-      <div class="wrap">
-        <div class="section-head">
+    <!-- QUICK -->
+    <section class="section section-quick" id="quick-recipes" aria-labelledby="quick-heading">
+      <div class="wrap quick-layout">
+        <header class="quick-head reveal">
           <p class="eyebrow">Quick Recipes</p>
-          <h2 id="quick-heading">10 minutes or less</h2>
+          <p class="big-ten" aria-hidden="true">10</p>
+          <h2 id="quick-heading" class="h-section">minutes <em>or less</em></h2>
           <p class="section-intro">Weeknight dishes that still feel like a celebration. These are sample layouts — times and titles will be replaced with Cristel’s own 10-minute recipes.</p>
-          <span class="flag-stripe" aria-hidden="true"></span>
-        </div>
+        </header>
         <div id="quick-grid"></div>
       </div>
     </section>
 
+    <!-- VEGAN -->
     <section class="section section-rose" id="vegan" aria-labelledby="vegan-heading">
       <div class="wrap">
-        <div class="section-head">
+        <header class="section-head section-head-center reveal">
           <p class="eyebrow">Vegan &amp; Meatless</p>
-          <h2 id="vegan-heading">A place at the table for every plate</h2>
+          <h2 id="vegan-heading" class="h-section">A place at the table <em>for every plate</em></h2>
           <p class="section-intro">Vegan and non-meat options will live in this section. What you see now is a sample layout, ready for the real recipes.</p>
-          <span class="flag-stripe" aria-hidden="true"></span>
-        </div>
+        </header>
+        <p class="rail-hint" aria-hidden="true">Swipe for more <span>→</span></p>
         <div id="vegan-grid"></div>
       </div>
     </section>
 
-    <section class="section" id="fashion" aria-labelledby="fashion-heading">
+    <!-- FASHION -->
+    <section class="section section-wine" id="fashion" aria-labelledby="fashion-heading">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Fashion &amp; Cooking</p>
-          <h2 id="fashion-heading">What she wore, and how to shop the look</h2>
+        <header class="section-head reveal">
+          <p class="section-no" aria-hidden="true">No. 02</p>
+          <div>
+            <p class="eyebrow">Fashion &amp; Cooking</p>
+            <h2 id="fashion-heading" class="h-section">What she wore, <em>and how to shop the look</em></h2>
+          </div>
           <p class="section-intro">Outfits and accessories from <em>Buon Appetito with Cristel</em> will be collected here, with affiliate links to the pieces you can take home. The three cards below are placeholders — they are not looks from the show yet.</p>
-          <span class="flag-stripe" aria-hidden="true"></span>
-        </div>
+        </header>
+        <p class="rail-hint" aria-hidden="true">Swipe for more <span>→</span></p>
         <div id="looks-grid"></div>
       </div>
     </section>
 
-    <section class="section section-rose" id="about" aria-labelledby="about-heading">
+    <!-- CATERING -->
+    <section class="section section-catering" id="catering" aria-labelledby="catering-heading">
+      <div class="wrap">
+        <div class="catering-intro">
+          <div class="catering-copy reveal">
+            <p class="section-no" aria-hidden="true">No. 03</p>
+            <p class="eyebrow">Catering</p>
+            <h2 id="catering-heading" class="h-section">Bring Cristel’s table <em>to your event</em></h2>
+            <p class="lede">The same warmth you see on <em>Buon Appetito with Cristel</em>, served at your gathering. Tell us about your occasion, and we’ll be in touch to talk through the menu, the setting and the details.</p>
+            <a class="btn btn-primary" href="#catering-form">Request catering</a>
+          </div>
+          <div class="catering-visual reveal" aria-hidden="true">
+            <figure class="cat-img cat-img-a"><img src="assets/images/prop-hydrangeas-crop.webp" width="235" height="462" alt="" loading="lazy" decoding="async"></figure>
+            <figure class="cat-img cat-img-b"><img src="assets/images/prop-lemons-crop.webp" width="210" height="210" alt="" loading="lazy" decoding="async"></figure>
+            <span class="flag-stripe" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <h3 class="sr-only">Events Cristel can cater</h3>
+        <ul class="event-types">
+          <li class="reveal">
+            <span class="event-num" aria-hidden="true">i.</span>
+            <h4>Private dinners</h4>
+            <p>An intimate meal at home, made for the people around your table.</p>
+          </li>
+          <li class="reveal">
+            <span class="event-num" aria-hidden="true">ii.</span>
+            <h4>Celebrations</h4>
+            <p>Birthdays, anniversaries, showers and the milestones worth raising a glass to.</p>
+          </li>
+          <li class="reveal">
+            <span class="event-num" aria-hidden="true">iii.</span>
+            <h4>Corporate events</h4>
+            <p>Team dinners, client gatherings and brand events with a little Italian glamour.</p>
+          </li>
+          <li class="reveal">
+            <span class="event-num" aria-hidden="true">iv.</span>
+            <h4>Holidays &amp; seasonal gatherings</h4>
+            <p>Family-style tables for the days when everyone comes home.</p>
+          </li>
+        </ul>
+
+        <div class="catering-form-wrap" id="catering-form">
+          <div class="catering-form-head">
+            <h3>Request catering</h3>
+            <p>Share a few details and we’ll be in touch. Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+          </div>
+          <form id="catering-inquiry" class="form-grid" action="#" method="post" novalidate>
+            <div class="field">
+              <label for="cat-name">Name <span aria-hidden="true">*</span></label>
+              <input id="cat-name" name="name" type="text" autocomplete="name" required aria-describedby="cat-name-err">
+              <p class="field-error" id="cat-name-err" hidden>Please add your name.</p>
+            </div>
+            <div class="field">
+              <label for="cat-email">Email <span aria-hidden="true">*</span></label>
+              <input id="cat-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="cat-email-err">
+              <p class="field-error" id="cat-email-err" hidden>Please add an email like name@example.com.</p>
+            </div>
+            <div class="field">
+              <label for="cat-phone">Phone</label>
+              <input id="cat-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="cat-date">Event date</label>
+              <input id="cat-date" name="event_date" type="date" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="cat-type">Event type <span aria-hidden="true">*</span></label>
+              <select id="cat-type" name="event_type" required aria-describedby="cat-type-err">
+                <option value="">Choose one</option>
+                <option>Private dinner</option>
+                <option>Celebration</option>
+                <option>Corporate event</option>
+                <option>Holiday or seasonal gathering</option>
+                <option>Something else</option>
+              </select>
+              <p class="field-error" id="cat-type-err" hidden>Please choose an event type.</p>
+            </div>
+            <div class="field">
+              <label for="cat-guests">Guest count</label>
+              <input id="cat-guests" name="guests" type="number" inputmode="numeric" min="1" step="1" autocomplete="off">
+            </div>
+            <div class="field field-full">
+              <label for="cat-location">Location</label>
+              <input id="cat-location" name="location" type="text" autocomplete="address-level2" placeholder="City, venue or neighborhood">
+            </div>
+            <div class="field field-full">
+              <label for="cat-message">Tell us about your event</label>
+              <textarea id="cat-message" name="message" rows="4" autocomplete="off"></textarea>
+            </div>
+            <div class="field-full form-actions">
+              <button class="btn btn-primary" type="submit">Request catering</button>
+              <p class="form-hint">This opens your email app with your details filled in, ready to send.</p>
+            </div>
+            <p class="form-status field-full" id="catering-status" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-about" id="about" aria-labelledby="about-heading">
       <div class="wrap about-grid">
-        <figure class="about-photo">
-          <img
-            src="assets/images/cristel-about.webp"
-            width="890"
-            height="890"
-            alt="Cristel Monrose smiling at the camera, with pink hydrangeas and a jar of lemons behind her."
-            loading="lazy"
-            decoding="async">
-        </figure>
-        <div class="about-copy">
+        <div class="about-visual reveal">
+          <figure class="about-photo">
+            <img
+              src="assets/images/cristel-about.webp"
+              width="890"
+              height="890"
+              alt="Cristel Monrose smiling at the camera, with pink hydrangeas and a jar of lemons behind her."
+              loading="lazy"
+              decoding="async">
+          </figure>
+          <p class="about-signature" aria-hidden="true">Cristel</p>
+        </div>
+        <div class="about-copy reveal">
           <p class="eyebrow">About Cristel</p>
-          <h2 id="about-heading">Food, fashion and beauty, served with love.</h2>
-          <p>Cristel Monrose is a celebrity chef who brings the warmth of the family table to everything she touches. She cooks with celebrities on her show, teaches kids to love the kitchen, and carries the same glamour and generosity into fashion and beauty.</p>
+          <h2 id="about-heading" class="h-section">Food, fashion and beauty, <em>served with love.</em></h2>
+          <p class="about-lead">Cristel Monrose is a celebrity chef who brings the warmth of the family table to everything she touches. She cooks with celebrities on her show, teaches kids to love the kitchen, and carries the same glamour and generosity into fashion and beauty.</p>
           <p>Her brand lives where a great meal meets a beautiful life: rosé on the table, a perfect red lip, and a story worth sharing.</p>
           <p><em>Buon Appetito with Cristel</em> is her celebrity cooking show — celebrities, cooking, and real talk. This site, Cooking With Cristel, is the social home for that table.</p>
-          <aside class="mission">
-            <p class="eyebrow">Mission</p>
-            <p>Make every day feel like a celebration at the table.</p>
-          </aside>
           <p class="positioning">For people who love good food and a beautiful life, Cristel Monrose is the celebrity chef who makes both feel effortless, joyful and within reach.</p>
           <p>Find her as <strong>@CookingWithCristel</strong> on Instagram, TikTok, YouTube and Facebook.</p>
         </div>
       </div>
-
       <div class="wrap">
-          <div class="signup" id="join">
-            <h3>Join the table</h3>
-            <p class="form-note"><strong>Preview only — this form is not connected yet.</strong> When the site is live, this is how you’ll get recipes, looks, and notes from the show. Pull up a chair, we’re making this together.</p>
-            <form id="join-form" action="#" method="post" novalidate>
-              <div class="field">
-                <label for="join-name">Name</label>
-                <input id="join-name" name="name" type="text" autocomplete="name" required>
-              </div>
-              <div class="field">
-                <label for="join-email">Email</label>
-                <input id="join-email" name="email" type="email" inputmode="email" autocomplete="email" required>
-              </div>
-              <div class="field">
-                <label for="join-note">A note, if you like <span class="sr-only">(optional)</span></label>
-                <textarea id="join-note" name="note" rows="3" autocomplete="off"></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">Join the table</button>
-              <p class="form-status" id="form-status" hidden></p>
-            </form>
+        <aside class="mission reveal" aria-label="Mission">
+          <p class="eyebrow">Mission</p>
+          <p class="mission-text">Make every day feel like a celebration at the table.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="join" aria-labelledby="join-heading">
+      <div class="wrap join-grid" id="join">
+        <div class="join-copy">
+          <h2 id="join-heading" class="h-section">Join <em>the table</em></h2>
+          <p class="form-note"><strong>Preview only — this form is not connected yet.</strong> When the site is live, this is how you’ll get recipes, looks, and notes from the show. Pull up a chair, we’re making this together.</p>
+        </div>
+        <form id="join-form" class="join-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="join-name">Name</label>
+            <input id="join-name" name="name" type="text" autocomplete="name" required>
           </div>
+          <div class="field">
+            <label for="join-email">Email</label>
+            <input id="join-email" name="email" type="email" inputmode="email" autocomplete="email" required>
+          </div>
+          <div class="field field-full">
+            <label for="join-note">A note, if you like <span class="sr-only">(optional)</span></label>
+            <textarea id="join-note" name="note" rows="2" autocomplete="off"></textarea>
+          </div>
+          <div class="field-full">
+            <button class="btn btn-light" type="submit">Join the table</button>
+          </div>
+          <p class="form-status field-full" id="form-status" hidden></p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <span class="wordmark wordmark-on-dark">
+          <span class="wordmark-script">Cristel</span>
+          <span class="wordmark-surname">Monrose</span>
+        </span>
+        <p class="signoff">Buon appetito!</p>
+        <span class="flag-stripe" aria-hidden="true"></span>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#quick-recipes">Quick Recipes</a></li>
+          <li><a href="#vegan">Vegan &amp; Meatless</a></li>
+          <li><a href="#fashion">Fashion &amp; Cooking</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="footer-meta">
+        <p>Cooking With Cristel · Buon Appetito with Cristel</p>
+        <p>@CookingWithCristel</p>
+      </div>
+    </div>
     <div class="wrap">
-      <span class="wordmark wordmark-on-dark">
-        <span class="wordmark-script">Cristel</span>
-        <span class="wordmark-surname">Monrose</span>
-      </span>
-      <p>Cooking With Cristel · Buon Appetito with Cristel</p>
-      <p>@CookingWithCristel</p>
-      <p class="signoff">Buon appetito!</p>
-      <span class="flag-stripe" aria-hidden="true"></span>
       <p class="footer-fine">Preview site for layout and brand review. Recipe and fashion cards are sample layouts, not Cristel’s published dishes or official show looks. Official brand photography is used with permission of the brand guidelines. Other stills are stock photos, credited in the data file.</p>
     </div>
   </footer>
@@ -272,7 +447,7 @@
     </div>
   </dialog>
 
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 </html>
