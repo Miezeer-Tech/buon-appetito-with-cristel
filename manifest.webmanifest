@@ -1,0 +1,14 @@
+{
+  "name": "Cooking With Cristel",
+  "short_name": "Cristel",
+  "description": "The home of Buon Appetito with Cristel.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F2E8C4",
+  "theme_color": "#722F37",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <!-- Quiet chef-hat + heart motif in Red Wine -->
+  <path d="M10 22c0-3.2 2.2-6 5.2-6 0.6-3.4 3.4-6 7-6s6.4 2.6 7 6c3 0 5.2 2.8 5.2 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M10 22h24.4v3.2c0 1.2-.8 2.2-2 2.4l-1.2.2v1.6H13.2V27.8l-1.2-.2c-1.2-.2-2-1.2-2-2.4V22Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M26.5 36.2c-4.2-3.8-7-6.4-7-8.8 0-1.6 1.2-2.8 2.8-2.8 1.2 0 2.2.6 2.8 1.6.6-1 1.6-1.6 2.8-1.6 1.6 0 2.8 1.2 2.8 2.8 0 2.4-2.8 5-7 8.8Z" fill="currentColor"/>
+</svg>

@@ -1,0 +1,3 @@
+# Preview site with placeholder recipes — keep out of search until real content is in place.
+User-agent: *
+Disallow: /
