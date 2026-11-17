@@ -7,6 +7,7 @@
  * - Fashion "Shop the look" buttons use href: "#" and affiliate: "placeholder-..."
  *   until a brand partnership is live. Then set href to the affiliate URL
  *   and a stable affiliate id.
+ * - Photo sources and photographers are listed in CREDITS.md.
  * - Do not invent biographical facts. About copy is drawn from the official
  *   Cristel Monrose brand guidelines (November 2026).
  */
@@ -21,6 +22,7 @@ window.CRISTEL_DATA = {
       section: "showcase",
       diet: "Sample layout",
       image: "assets/images/dish-herb-pasta.webp",
+      imageSmall: "assets/images/dish-herb-pasta-800.webp",
       imageAlt: "Sample stock photo: three plates of herb pasta and glasses of red wine on a white tablecloth. Not a photo from the show.",
       excerpt: "Recipe coming soon — sample layout. Replace this card with one of Cristel’s pasta recipes.",
       credit: "Stock photo via Unsplash, used only to show the layout.",
@@ -118,8 +120,8 @@ window.CRISTEL_DATA = {
       timeNote: "sample time",
       section: "vegan",
       diet: "Vegan · sample",
-      image: "assets/images/dish-garden-salad.webp",
-      imageAlt: "Sample stock photo: a colorful chopped salad with avocado and fresh vegetables. Not a photo from the show.",
+      image: "assets/images/dish-green-salad.webp",
+      imageAlt: "Sample stock photo: a green salad of leaves and shaved cucumber in a wooden bowl with two spoons. Not a photo from the show.",
       excerpt: "Recipe coming soon — sample layout for a vegan, no-meat option.",
       credit: "Stock photo via Unsplash, used only to show the layout.",
       placeholder: true
@@ -132,8 +134,8 @@ window.CRISTEL_DATA = {
       timeNote: "sample time",
       section: "vegan",
       diet: "Meatless · sample",
-      image: "assets/images/dish-tomato-rotini.webp",
-      imageAlt: "Sample stock photo: rotini with tomatoes and basil on a white wooden table. Not a photo from the show.",
+      image: "assets/images/dish-tomato-basil-rotini.webp",
+      imageAlt: "Sample stock photo: a plate of rotini with tomato and fresh basil leaves. Not a photo from the show.",
       excerpt: "Recipe coming soon — sample layout for a meatless pasta.",
       credit: "Stock photo via Unsplash, used only to show the layout.",
       placeholder: true
@@ -144,7 +146,7 @@ window.CRISTEL_DATA = {
       id: "sample-studio-heels",
       title: "Studio heels",
       titlePrefix: "Sample look",
-      image: "assets/images/look-heels.jpg",
+      image: "assets/images/look-heels.webp",
       imageAlt: "Sample stock photo: a pair of cream pointed heels by a window. Not a photo of an outfit from the show.",
       note: "Placeholder for an accessory or outfit from Buon Appetito with Cristel. Replace with the real look, notes, and affiliate links.",
       items: [
@@ -157,28 +159,28 @@ window.CRISTEL_DATA = {
       id: "sample-gold-hour",
       title: "Gold hour",
       titlePrefix: "Sample look",
-      image: "assets/images/look-gold-hoops.webp",
-      imageAlt: "Detail from Cristel Monrose’s official brand photography: a gold hoop earring and a gold chain at the neck. Used here as a placeholder for a jewelry look, not a confirmed show outfit.",
+      image: "assets/images/look-gold-hoops-flatlay.webp",
+      imageAlt: "Sample stock photo: a pair of gold hoop earrings resting on a pink ribbed dish. Not jewelry from the show.",
       note: "Placeholder for jewelry worn on the show — hoops, chains, or a daily gold piece. Replace with the real look and affiliate links.",
       items: [
         { name: "Gold hoop earrings", href: "#", affiliate: "placeholder-hoops" },
         { name: "Everyday gold chain", href: "#", affiliate: "placeholder-chain" }
       ],
-      credit: "Detail from official Cristel Monrose brand photography.",
+      credit: "Stock photo via Unsplash, used only to show the layout.",
       placeholder: true
     },
     {
       id: "sample-red-lip",
       title: "Red lip, rosé night",
       titlePrefix: "Sample look",
-      image: "assets/images/look-lemons.webp",
-      imageAlt: "Lemons and pink hydrangeas in a glass vase, from Cristel Monrose’s official brand photography. Used here as a placeholder for a beauty and table look, not a confirmed show outfit.",
+      image: "assets/images/look-red-lip.webp",
+      imageAlt: "Sample stock photo: a red lipstick in a gold case with dried rose petals and a gold chain. Not a product from the show.",
       note: "Placeholder for a beauty and table look from the show. Replace with the real products, notes, and affiliate links.",
       items: [
         { name: "A perfect red lip", href: "#", affiliate: "placeholder-lipstick" },
         { name: "A glass of rosé", href: "#", affiliate: "placeholder-wine" }
       ],
-      credit: "Detail from official Cristel Monrose brand photography.",
+      credit: "Stock photo via Unsplash, used only to show the layout.",
       placeholder: true
     }
   ]

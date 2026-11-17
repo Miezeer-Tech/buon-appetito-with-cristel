@@ -48,7 +48,7 @@ Navigation:
 - Tagline, mission, positioning, and About copy
 - Voice lines: “Pull up a chair,” “Salt your pasta water like the sea,” “A red lip and a glass of rosé fix almost anything,” sign-off “Buon appetito!”
 - Palette, typography, wordmark rules, and the Italian-flag stripe
-- Official photographs of Cristel (hero, about, gold-hoop detail, lemon-and-hydrangea still)
+- Official photographs of Cristel (hero, about)
 
 **Placeholder — clearly labeled, ready to replace**
 
@@ -56,7 +56,7 @@ Navigation:
 - All fashion/accessory “looks.” They are not outfits from the show. Shop buttons use `href="#"` and `data-affiliate="placeholder-..."`.
 - The catering inquiry form until `CATERING_EMAIL` is set (shows “Inquiries open soon”).
 - The newsletter form. It is marked “Preview only — this form is not connected yet” and does not send anything.
-- Food stills on recipe cards, and the cream heels photo, are Unsplash stock — not photos from the show.
+- Food, fashion and catering photos are Unsplash stock — not photos from the show. Every source and photographer is listed in [CREDITS.md](CREDITS.md).
 
 The preview banner, sample badges, and footer also state this clearly. Search engines are asked not to index the preview (`noindex` and `robots.txt`).
 

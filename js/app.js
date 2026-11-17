@@ -54,6 +54,8 @@
     var imgWrap = el("div", { class: "dish-media" });
     imgWrap.appendChild(el("img", {
       src: recipe.image,
+      srcset: recipe.imageSmall ? recipe.imageSmall + " 800w, " + recipe.image + " 1400w" : null,
+      sizes: recipe.imageSmall ? "(max-width: 899px) 92vw, 58vw" : null,
       alt: recipe.imageAlt,
       width: "900",
       height: "1125",
